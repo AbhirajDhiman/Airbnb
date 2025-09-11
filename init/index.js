@@ -1,29 +1,26 @@
-const mongoose = require("mongoose");
-const Listing = require("../models/listing"); // go up one folder
-const data = require("./data"); // import sample data
+const express=require("express");
+const app=express();
+const path = require("path");
+const mongoose= require("mongoose");
+const initdata=require("./data.js");
+const Listing=require("../models/listing.js");
 
 const Mongo_url = "mongodb://localhost:27017/wanderlust";
 
-// Connect to MongoDB and seed data
-async function initDB() {
-  try {
-    await mongoose.connect(Mongo_url);
-    console.log("✅ Connected to MongoDB");
+app.set("view engine", "ejs");
+app.set("views",path.join(__dirname,"views"));
 
-    // Clear existing data
-    await Listing.deleteMany({});
-    console.log("🗑️ Old data deleted");
+main()
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log(err));
 
-    // Insert fresh data
-    await Listing.insertMany(data);
-    console.log("🌱 Database seeded successfully");
-
-    // Close connection
-    mongoose.connection.close();
-  } catch (err) {
-    console.error("❌ Initialization error:", err);
-    process.exit(1);
-  }
+async function main() {
+  await mongoose.connect(Mongo_url);
 }
 
+const initDB = async()=>{
+  await Listing.deleteMany({});
+  await Listing.insertMany(initdata.data);
+  console.log("Data was initialised");
+}
 initDB();
