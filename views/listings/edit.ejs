@@ -1,8 +1,9 @@
-<% layout('layouts/boilerplate') %>
+<%- layout('layouts/boilerplate') -%>
 
-</head>
-<body>
-  <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+<% block('title') -%>Edit Listing | Wanderlust<% /block -%>
+
+<% block('content') -%>
+<form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
     <h2>Edit Listing</h2>
 
     <label for="title">Title</label>
@@ -24,6 +25,5 @@
     <input type="text" id="location" name="listing[location]" value="<%= listing.location %>" />
 
     <button type="submit">Edit</button>
-  </form>
-</body>
-</html>
+</form>
+<% /block -%>

@@ -1,11 +1,8 @@
-<% layout('layouts/boilerplate') %>
+<%- layout('layouts/boilerplate') -%>
 
-<h3>All Listings</h3>
+<% block('title') -%>Test<% /block -%>
 
-<form method="GET" action="/listings/new">
-  <button class="btn btn-primary">Create new Listing</button>
-</form>
-
-<% for (let listing of listings) { %>
-  <a href="/listings/<%= listing._id %>"><%= listing.title %></a><br>
-<% } %>
+<% block('content') -%>
+<h1>Test Page</h1>
+<p>Simple content</p>
+<% /block -%>
