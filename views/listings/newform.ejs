@@ -1,43 +1,26 @@
-<%- layout('layouts/boilerplate') -%>
-
-<% block('title') -%>Create Listing | Wanderlust<% /block -%>
-
-<% block('content') -%>
-<div class="container mt-4">
+<% layout('layouts/boilerplate') %>
+<body>
+  <form method="POST" action="/listings">
     <h2>Create a Listing</h2>
-    <form method="POST" action="/listings">
-        
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="title" name="listing[title]" placeholder="Enter title" required />
-        </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="listing[description]" placeholder="Enter description" required></textarea>
-        </div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="listing[title]" placeholder="Enter title" required />
 
-        <div class="mb-3">
-            <label for="image" class="form-label">Image URL</label>
-            <input type="text" class="form-control" id="image" name="listing[image]" placeholder="Enter image URL" />
-        </div>
+    <label for="description">Description</label>
+    <textarea id="description" name="listing[description]" placeholder="Enter description" required></textarea>
 
-        <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input type="number" class="form-control" id="price" name="listing[price]" placeholder="Enter price" required />
-        </div>
+    <label for="image">Image URL</label>
+    <input type="text" id="image" name="listing[image]" placeholder="Enter image URL" />
 
-        <div class="mb-3">
-            <label for="country" class="form-label">Country Code</label>
-            <input type="text" class="form-control" id="country" name="listing[country]" placeholder="Enter country code" />
-        </div>
+    <label for="price">Price</label>
+    <input type="number" id="price" name="listing[price]" placeholder="Enter price" required />
 
-        <div class="mb-3">
-            <label for="location" class="form-label">Location</label>
-            <input type="text" class="form-control" id="location" name="listing[location]" placeholder="Enter location" />
-        </div>
+    <label for="country">Country Code</label>
+    <input type="number" id="country" name="listing[country]" placeholder="Enter country code" />
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-<% /block -%>
+    <label for="location">Location</label>
+    <input type="text" id="location" name="listing[location]" placeholder="Enter location" />
+
+    <button type="submit">Submit</button>
+  </form>
+</body>

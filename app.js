@@ -10,11 +10,10 @@ const port = 8080;
 const Mongo_url = "mongodb://localhost:27017/wanderlust";
 
 // View engine setup
-app.engine('ejs', ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
-
+app.engine('ejs', ejsMate);
+app.set('view engine', 'ejs');
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
