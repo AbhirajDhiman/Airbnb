@@ -1,3 +1,6 @@
+.body{
+    font-family: "Plus Jakarta Sans",sans-serif !important;
+}
 .navbar{
     height: 5rem;
     background-color: white;
@@ -9,9 +12,13 @@
 .nav-link{
     color: #222222 !important;
 }
+.f-info{
+    margin-top: 30px;
+}
 .f-info-links a{
     text-decoration: none;
     color: #222222;
+    margin-right: 10px;
 }
 .f-info-links a:hover{
     text-decoration: underline;
@@ -39,3 +46,83 @@
     justify-content: center;
     align-items: space-evenly;
 }
+ .listings-wrapper {
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .listing-card {
+    width: calc(25% - 24px);
+    border: none !important;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 24px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .listing-card:hover {
+    transform: scale(1.03);
+  }
+
+  .card-img-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .listing-card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 0;
+    padding-top: 12px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    max-width: 80%;
+  }
+
+  .card-text {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .fa-star {
+    color: #FF385C;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .listing-card {
+      width: calc(33.333% - 24px);
+    }
+  }
+
+  @media (max-width: 992px) {
+    .listing-card {
+      width: calc(50% - 24px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .listing-card {
+      width: 100%;
+    }
+  }

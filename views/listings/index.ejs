@@ -1,11 +1,21 @@
-<% layout('layouts/boilerplate') %>
+hey so this is my code i want u to style it exzactly like the airbnb website this is the content same hover effects and styling <% layout('layouts/boilerplate') %>
 
 <h3>All Listings</h3>
 
 <!-- <form method="GET" action="/listings/new">
   <button class="btn btn-primary">Create new Listing</button>
 </form> -->
-
-<% for (let listing of listings) { %>
-  <a href="/listings/<%= listing._id %>"><%= listing.title %></a><br>
-<% } %>
+<div class="listings-wrapper d-flex flex-wrap justify-content-center">
+  <% for (let listing of listings) { %>
+    <a href="/listings/<%= listing._id %>" class="card listing-card text-decoration-none text-dark m-2" style="width: 18rem;">
+      <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">
+      <div class="card-body">
+        <h5 class="card-title"><%= listing.title %></h5>
+        <p class="card-text">
+          ₹<%= listing.price.toLocaleString("en-IN") %> / night<br>
+          <small class="text-muted"><%= listing.location %>, <%= listing.country %></small>
+        </p>
+      </div>
+    </a>
+  <% } %>
+</div>
