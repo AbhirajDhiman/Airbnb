@@ -1,105 +1,170 @@
-# Airbnb Clone (Backend with Node, Express, EJS)
+# 🏠 Wanderlust - Airbnb Clone
 
-A learning project built to understand backend development: routing, views (EJS), database models, authentication & CRUD operations.  
-⚠️ This is **not** the official Airbnb, but a simplified clone for practice.
+A full-stack learning project built to understand backend development with Node.js, Express, and EJS templating. This application mimics core Airbnb functionality with property listings, user authentication, and CRUD operations.
 
----
+⚠️ **Note**: This is a learning project and not affiliated with Airbnb Inc.
 
-## 🚀 Features
+![Wanderlust Demo](https://img.shields.io/badge/Demo-Live-brightgreen) 
+![Node.js](https://img.shields.io/badge/Node.js-16.x-green)
+![Express](https://img.shields.io/badge/Express-4.x-lightgrey)
+![EJS](https://img.shields.io/badge/Templating-EJS-orange)
 
-- User registration & login
-- Browse/list properties (rooms/houses)
+## ✨ Features
+
+### 🔐 Authentication
+- User registration and login
+- Secure password hashing
+- Session management
+
+### 🏠 Property Listings
+- Browse all property listings
+- View detailed property pages
 - Create new property listings
-- View details of a property
-- Edit / Delete listings (for owners/admin)
-- EJS views for rendering front-end pages
-- Express routes to handle HTTP requests
-- Database models for users & listings
+- Edit existing listings (owners only)
+- Delete listings (owners/admin)
 
----
+### 🎨 User Experience
+- Responsive design optimized for all devices
+- Airbnb-inspired UI with smooth animations
+- Intuitive navigation and clean interface
 
-## 🛠️ Technologies Used
+## 🛠 Tech Stack
 
-- **Node.js** – JavaScript runtime  
-- **Express.js** – Web framework for backend routing  
-- **EJS** – Templating engine to render views from server  
-- **CSS / public static files** – for styling & static assets  
-- **Database** – (MongoDB / MySQL / PostgreSQL → specify what you used)  
-- **Models** – Represent entities like Users, Properties/Listings  
+### Backend
+- **Node.js** - JavaScript runtime environment
+- **Express.js** - Web application framework
+- **EJS** - Embedded JavaScript templating
 
----
+### Frontend
+- **Bootstrap 5** - Responsive CSS framework
+- **Custom CSS** - Airbnb-inspired styling
+- **Font Awesome** - Icons
+
+### Database
+- **MongoDB** (or specify your database)
+- **Mongoose** (if using MongoDB)
+
+### Additional Tools
+- **Environment variables** with dotenv
+- **Session management** with express-session
+- **File uploads** with Multer (if implemented)
 
 ## 📁 Project Structure
 
-Airbnb/
-├── app.js # Main server file
-├── models/ # Database models (User, Listing etc.)
-├── views/ # EJS templates
-├── public/ # Static assets: CSS, images, client JS
-├── node_modules/
+wanderlust/
+├── 📂 models/
+│ ├── user.js
+│ └── listing.js
+├── 📂 views/
+│ ├── partials/
+│ │ ├── header.ejs
+│ │ └── footer.ejs
+│ ├── pages/
+│ │ ├── index.ejs
+│ │ ├── listing.ejs
+│ │ ├── new.ejs
+│ │ └── edit.ejs
+│ └── auth/
+│ ├── login.ejs
+│ └── register.ejs
+├── 📂 routes/
+│ ├── index.js
+│ ├── auth.js
+│ └── listings.js
+├── 📂 public/
+│ ├── css/
+│ │ └── style.css
+│ ├── js/
+│ │ └── script.js
+│ └── images/
+├── 📂 middleware/
+│ ├── auth.js
+│ └── validation.js
+├── app.js
 ├── package.json
-└── package-lock.json
+└── .env
 
-yaml
-Copy code
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AbhirajDhiman/Airbnb.git
+   cd Airbnb
+2. **Install Dependencies**
+   npm install
+3. **Environment Configuration**
+   PORT=3000
+   DB_URI=your_database_connection_string
+   SESSION_SECRET=your_secret_key
+   NODE_ENV=development
+4. **Database Mangement**
+   Database Setup
+   
+   For MongoDB: Ensure MongoDB is running
+   
+   For other databases: Run appropriate migration scripts
+5. **Start Application**
+   # Development mode
+   npm run dev
+   
+   # Production mode
+   npm start
+6. **Access the App**
+7. Open your browser and navigate to http://localhost:8080
+
+## 🧠 Learning Outcomes
+
+Through building this project, you will gain practical experience with:
+
+- **RESTful routing design and implementation** - Creating logical API endpoints following REST principles
+- **Middleware configuration and custom middleware creation** - Understanding the Express middleware pipeline
+- **Database modeling with Mongoose (or your chosen ORM/ODM)** - Designing schemas and data relationships
+- **Authentication strategies and session management** - Implementing secure user authentication
+- **Server-side rendering with EJS templates** - Dynamic content rendering on the server
+- **Form validation and error handling** - Ensuring data integrity and user-friendly error messages
+- **File uploads and storage management** - Handling multipart form data and asset storage
+- **Responsive frontend design principles** - Creating mobile-first, adaptive layouts
+
+## 🔮 Future Enhancements
+
+### ⚡ Short Term
+- **Advanced search and filtering functionality** - Add filters for price range, location, amenities
+- **Image upload and cloud storage integration** - Implement Cloudinary or AWS S3 for image management
+- **User reviews and rating system** - Allow users to leave feedback on listings
+- **Booking and reservation system** - Add calendar functionality and booking management
+
+### 🚀 Long Term
+- **Real-time messaging between users** - Implement WebSockets for host-guest communication
+- **Payment integration with Stripe/PayPal** - Secure payment processing for bookings
+- **Mobile application with React Native** - Cross-platform mobile app development
+- **Recommendation engine** - Algorithmic suggestions based on user preferences
+- **Admin dashboard for analytics** - Data visualization and management tools
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by Airbnb's design and functionality
+- Built as part of a learning journey in full-stack development
+- Thanks to the open-source community for invaluable resources and tools
 
 ---
 
-## ⚙ Setup Instructions
+<div align="center">
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/AbhirajDhiman/Airbnb.git
-Install dependencies
+**Happy Coding!** 🎉
 
-bash
-Copy code
-cd Airbnb
-npm install
-Set up the database
-
-(Specify DB: MongoDB / MySQL etc.)
-
-Create a .env file with configs like:
-
-ini
-Copy code
-DB_URI=your_database_uri
-SESSION_SECRET=your_secret
-PORT=3000
-Run migrations / sync models (if using ORM) or ensure schema setup
-
-Start the server
-
-bash
-Copy code
-npm start
-Open in browser: http://localhost:3000
-
-✅ Learning Outcomes
-Defining routes for GET / POST requests
-
-Middleware setup (express.json(), express.urlencoded(), static assets, session/auth if used)
-
-Rendering server-side pages with EJS
-
-Database schema / models & CRUD operations
-
-Basic authentication & authorization
-
-Structuring backend code (models / routes / views)
-
-✍ Future Improvements
-Add search & filtering (location, price, etc.)
-
-Image uploads for listings
-
-User profiles & reviews
-
-Role-based access (admin vs user)
-
-REST API version with JSON endpoints
-
-Validation, Error handling, Logging
-
-Deployment (Heroku / AWS / DigitalOcean)
+</div>
